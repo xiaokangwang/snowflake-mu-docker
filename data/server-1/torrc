@@ -1,0 +1,10 @@
+BridgeRelay 1
+AssumeReachable 1
+BridgeDistribution none
+ORPort 127.0.0.1:auto
+ExtORPort auto
+SocksPort 0
+DataDirectory /opt/server-1/tor-data/
+ServerTransportPlugin snowflake exec /snowflake-server  --log /opt/server-1/snowflake-server.log -disable-tls -unsafe-logging
+ServerTransportListenAddr snowflake 0.0.0.0:8888
+Nickname TransientSnow1

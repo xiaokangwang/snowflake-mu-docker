@@ -1,0 +1,27 @@
+2022/04/13 11:37:04 the --acme-hostnames option is required
+2022/04/13 12:15:58 the --acme-hostnames option is required
+2022/04/13 12:20:11 the --acme-hostnames option is required
+2022/04/13 12:20:57 the --acme-hostnames option is required
+2022/04/13 12:25:28 the --acme-hostnames option is required
+2022/04/13 12:44:07 the --acme-hostnames option is required
+2022/04/13 12:50:38 the --acme-hostnames option is required
+2022/04/13 12:55:54 the --acme-hostnames option is required
+2022/04/13 13:31:34 the --acme-hostnames option is required
+2022/04/13 13:34:19 the --acme-hostnames option is required
+2022/04/13 13:35:40 the --acme-hostnames option is required
+2022/04/13 13:36:11 the --acme-hostnames option is required
+2022/04/13 13:39:42 the --acme-hostnames option is required
+2022/04/13 13:47:35 starting
+2022/04/13 13:47:35 listening with plain HTTP on 0.0.0.0:8888
+2022/04/13 13:54:33 synthesizing SIGTERM because of stdin close
+2022/04/13 13:54:33 caught signal "terminated", exiting
+2022/04/13 13:55:58 starting
+2022/04/13 13:55:58 listening with plain HTTP on 0.0.0.0:8888
+2022/04/13 13:57:53 synthesizing SIGTERM because of stdin close
+2022/04/13 13:57:53 caught signal "terminated", exiting
+2022/04/13 13:58:23 starting
+2022/04/13 13:58:23 listening with plain HTTP on 0.0.0.0:8888
+2022/04/13 14:32:54 starting
+2022/04/13 14:32:54 listening with plain HTTP on 0.0.0.0:8888
+2022/04/13 14:37:59 synthesizing SIGTERM because of stdin close
+2022/04/13 14:37:59 caught signal "terminated", exiting

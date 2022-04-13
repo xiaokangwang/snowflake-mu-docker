@@ -1,0 +1,163 @@
+version: '3'
+services:
+  broker:
+    image: snowflake-broker
+    ports:
+      - 8080:8080
+    networks:
+      - tormu
+    volumes:
+      - ./data/broker:/opt/broker/
+    environment:
+      - ROLE=snowflake-mu-docker
+    entrypoint:
+      /snowflake-broker -disable-tls -addr :8080 -disable-geoip -bridge-list-path /opt/broker/bridgelist.jsonl
+  proxy-1:
+    image: snowflake-proxy
+    networks:
+      - tormu
+    volumes:
+      - ./data/proxy-1:/opt/proxy-1/
+    environment:
+      - ROLE=snowflake-mu-docker
+    entrypoint:
+      /snowflake-proxy -broker http://broker:8080/ -verbose -unsafe-logging -keep-local-addresses
+    deploy:
+        replicas: 16
+  client-0:
+    image: snowflake-client
+    ports:
+      - 9080:9050
+    networks:
+      - tormu
+    volumes:
+      - ./data/client-0:/opt/client-0/
+    environment:
+      - ROLE=snowflake-mu-docker
+    entrypoint:
+      /usr/bin/tor -f /opt/client-0/torrc
+  client-0r:
+    image: snowflake-client
+    networks:
+      - tormu
+    volumes:
+      - ./data/client-0:/opt/client-0/
+    environment:
+      - ROLE=snowflake-mu-docker
+    entrypoint:
+      /usr/bin/tor -f /opt/client-0/torrc
+    deploy:
+        replicas: 2
+  client-1:
+    image: snowflake-client
+    ports:
+      - 9081:9050
+    networks:
+      - tormu
+    volumes:
+      - ./data/client-1:/opt/client-1/
+    environment:
+      - ROLE=snowflake-mu-docker
+    entrypoint:
+      /usr/bin/tor -f /opt/client-1/torrc
+  client-1r:
+    image: snowflake-client
+    networks:
+      - tormu
+    volumes:
+      - ./data/client-1:/opt/client-1/
+    environment:
+      - ROLE=snowflake-mu-docker
+    entrypoint:
+      /usr/bin/tor -f /opt/client-1/torrc
+    deploy:
+        replicas: 4
+
+  client-2:
+    image: snowflake-client
+    ports:
+      - 9082:9050
+    networks:
+      - tormu
+    volumes:
+      - ./data/client-2:/opt/client-2/
+    environment:
+      - ROLE=snowflake-mu-docker
+    entrypoint:
+      /usr/bin/tor -f /opt/client-2/torrc
+  client-2r:
+    image: snowflake-client
+    networks:
+      - tormu
+    volumes:
+      - ./data/client-2:/opt/client-2/
+    environment:
+      - ROLE=snowflake-mu-docker
+    entrypoint:
+      /usr/bin/tor -f /opt/client-2/torrc
+    deploy:
+        replicas: 4
+
+  client-3:
+    image: snowflake-client
+    ports:
+      - 9083:9050
+    networks:
+      - tormu
+    volumes:
+      - ./data/client-3:/opt/client-3/
+    environment:
+      - ROLE=snowflake-mu-docker
+    entrypoint:
+      /usr/bin/tor -f /opt/client-3/torrc
+  client-3r:
+    image: snowflake-client
+    networks:
+      - tormu
+    volumes:
+      - ./data/client-3:/opt/client-3/
+    environment:
+      - ROLE=snowflake-mu-docker
+    entrypoint:
+      /usr/bin/tor -f /opt/client-3/torrc
+    deploy:
+        replicas: 4
+
+  server-1:
+    image: snowflake-server
+    ports:
+      - 8888:8888
+    networks:
+      - tormu
+    volumes:
+      - ./data/server-1/:/opt/server-1/
+    environment:
+      - ROLE=snowflake-mu-docker
+    entrypoint:
+      /usr/bin/tor -f /opt/server-1/torrc
+  server-2:
+    image: snowflake-server
+    ports:
+      - 8889:8888
+    networks:
+      - tormu
+    volumes:
+      - ./data/server-2/:/opt/server-2/
+    environment:
+      - ROLE=snowflake-mu-docker
+    entrypoint:
+      /usr/bin/tor -f /opt/server-2/torrc
+  server-3:
+    image: snowflake-server
+    ports:
+      - 8890:8888
+    networks:
+      - tormu
+    volumes:
+      - ./data/server-3/:/opt/server-3/
+    environment:
+      - ROLE=snowflake-mu-docker
+    entrypoint:
+      /usr/bin/tor -f /opt/server-3/torrc
+networks:
+  tormu:

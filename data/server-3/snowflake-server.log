@@ -1,0 +1,11 @@
+2022/04/13 13:55:57 starting
+2022/04/13 13:55:57 listening with plain HTTP on 0.0.0.0:8888
+2022/04/13 13:57:52 caught signal "terminated", exiting
+2022/04/13 13:57:52 synthesizing SIGTERM because of stdin close
+2022/04/13 13:58:12 starting
+2022/04/13 13:58:12 listening with plain HTTP on 0.0.0.0:8888
+2022/04/13 14:00:51 synthesizing SIGTERM because of stdin close
+2022/04/13 14:00:51 caught signal "terminated", exiting
+2022/04/13 14:32:48 starting
+2022/04/13 14:32:48 listening with plain HTTP on 0.0.0.0:8888
+2022/04/13 14:37:59 caught signal "terminated", exiting
