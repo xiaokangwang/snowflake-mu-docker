@@ -1,4 +1,4 @@
-{"displayName":"default", "webSocketAddress":"wss://snowflake.bamsoftware.com/", "fingerprint":"2B280B23E1107BB62ABFC40DDCC8824814F80A72"}
-{"displayName":"TransientSnow1", "webSocketAddress":"ws://server-1:8888/", "fingerprint":"D74932202EDC2E0CDA47E5C500034CA015025C7E"}
-{"displayName":"TransientSnow2", "webSocketAddress":"ws://server-2:8888/", "fingerprint":"AAD77AA536509536024F0A68D6644B81CE7A70A3"}
-{"displayName":"TransientSnow3", "webSocketAddress":"ws://server-3:8888/", "fingerprint":"E1A343CF5B90CA2D589564DEF9EA4DFCB9F0C39C"}
+{"displayName":"default", "webSocketAddress":"wss://snowflake.torproject.net/", "fingerprint":"2B280B23E1107BB62ABFC40DDCC8824814F80A72"}
+{"displayName":"TransientSnow1", "webSocketAddress":"ws://transientsnow1-snowflake.torproject.net:8888/", "fingerprint":"D74932202EDC2E0CDA47E5C500034CA015025C7E"}
+{"displayName":"TransientSnow2", "webSocketAddress":"ws://transientsnow2-snowflake.torproject.net:8888/", "fingerprint":"AAD77AA536509536024F0A68D6644B81CE7A70A3"}
+{"displayName":"TransientSnow3", "webSocketAddress":"ws://transientsnow3-snowflake.torproject.net:8888/", "fingerprint":"E1A343CF5B90CA2D589564DEF9EA4DFCB9F0C39C"}

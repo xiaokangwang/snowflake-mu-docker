@@ -11,7 +11,7 @@ services:
     environment:
       - ROLE=snowflake-mu-docker
     entrypoint:
-      /snowflake-broker -disable-tls -addr :8080 -disable-geoip -bridge-list-path /opt/broker/bridgelist.jsonl
+      /snowflake-broker -disable-tls -addr :8080 -disable-geoip -bridge-list-path /opt/broker/bridgelist.jsonl -default-relay-pattern ^snowflake.torproject.net -allowed-relay-pattern nowflake.torproject.net
   proxy-1:
     image: snowflake-proxy
     networks:
@@ -21,7 +21,7 @@ services:
     environment:
       - ROLE=snowflake-mu-docker
     entrypoint:
-      /snowflake-proxy -broker http://broker:8080/ -verbose -unsafe-logging -keep-local-addresses
+      /snowflake-proxy -broker http://broker:8080/ -verbose -unsafe-logging -keep-local-addresses -allow-non-tls-relay -allowed-relay-hostname-pattern snowflake.torproject.net
     deploy:
         replicas: 16
   client-0:
@@ -128,7 +128,9 @@ services:
     ports:
       - 8888:8888
     networks:
-      - tormu
+      tormu:
+        aliases:
+          - transientsnow1-snowflake.torproject.net
     volumes:
       - ./data/server-1/:/opt/server-1/
     environment:
@@ -140,7 +142,9 @@ services:
     ports:
       - 8889:8888
     networks:
-      - tormu
+      tormu:
+        aliases:
+          - transientsnow2-snowflake.torproject.net
     volumes:
       - ./data/server-2/:/opt/server-2/
     environment:
@@ -152,7 +156,9 @@ services:
     ports:
       - 8890:8888
     networks:
-      - tormu
+      tormu:
+        aliases:
+          - transientsnow3-snowflake.torproject.net
     volumes:
       - ./data/server-3/:/opt/server-3/
     environment:
